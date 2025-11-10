@@ -34,7 +34,7 @@
 <body>
 
 <?php
-	$to = "danielbe@se.shenkar.ac.il";
+	$to = "danielbz@post.jce.ac.il";
 	$subject = $_POST['subject'];
 	$msg = wordwrap($_POST['message'],70);
 	$headers = "From: " . $_POST['email'] . "(" . $_POST['name'] . ")\r\n";
