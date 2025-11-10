@@ -1,0 +1,41 @@
+div						{margin:auto; text-align:center; padding:0px}
+ul						{list-style:none}
+
+#header					{max-width:1000px}
+
+#wrapper				{max-width:900px; background-color:#023A65}
+#sidebar				{display:inline-block; width:29%}
+#content				{display:inline-block; width:69%}
+
+#menu					{width:100%; margin:0px; padding:0px}
+#menu a					{display:block; text-decoration:none; color:white}
+#menu >li >ul a			{color:transparent; background-color:none}
+
+#menu >li					{background-color:#023A65; position:relative; width:19%; display:inline-block}
+#menu >li ul				{display:hidden; position:absolute; padding:0px; left:0; right:0; top:0}
+#menu >li ul li				{display:hidden; height:0px; background-color:#023A65}
+
+.active					{}
+#menu >li >a.active		{background-color:green}
+#menu >li:hover .active 	{background-color:green}
+
+#menu >li:hover			{background-color:#023A65}
+#menu >li a:hover			{background-color:orange !important}
+
+#menu >li:hover	>ul		{display:block; top:initial}
+#menu >li:hover >ul >li		{display:block;
+						 height:22px;
+						 transition:0.3s}
+
+#menu >li:hover >ul >li >a	{color:white}
+
+#sidemenu				{width:100%; margin:0px; padding:0px}
+#sidemenu ul				{list-style:circle}
+#sidemenu li				{background-color:#023A65}
+#sidemenu >li a:hover		{background-color:orange !important}
+
+#sidemenu a				{display:block; text-decoration:none; color:white}
+#sidemenu .active		{background-color:green}
+
+#content				{margin:0px}
+#sidebar				{margin:0px; vertical-align:top}

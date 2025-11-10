@@ -1,0 +1,56 @@
+﻿<!doctype html>
+
+<html>
+
+	<head>
+	
+	<title>Targil 10 - Wedensday</title>
+	
+	<meta charset="UTF-8">
+	
+	<style>
+		div						{margin:auto; text-align:center}
+		
+		#header					{max-width:1000px}
+	
+		#menu					{width:100%; margin:0px; padding:0px}
+		#menu a					{display:block; text-decoration:none; color:white}
+		
+		#menu >li				{background-color:#023A65; position:relative; width:19%; display:inline-block; border:1px solid black}
+		
+		#menu >li:hover			{background-color:#023A65}
+		#menu >li a:hover		{background-color:green}
+	</style>
+
+	<script>
+		var page = window.location.href;
+		
+		function verify() {
+			var tafrit = document.getElementById("menu");
+			var elements = tafrit.getElementsByTagName("a");
+			
+			for (i=0; i<elements.length; ++i)
+				if (page==elements[i].href) {
+					elements[i].style.backgroundColor="green";
+					break;
+				}
+		}
+	</script>
+
+	<script src="menu.js" lang="javascript"></script>
+	
+	</head>
+	
+	<body onload="verify()">
+		<a href="../" style="position:absolute; display:inline-block; float:left"><img src="home.gif" height=50px title="home (index page)" alt="דף הבית"></a>
+		
+		<div id=header>
+			<script>document.write(menu)</script>
+		</div>
+		<br>
+		<div id=content>
+			<img src="farm.gif">
+		</div>
+	</body>
+	
+</html>

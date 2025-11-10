@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl" manifest="offline.appcache">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Form</title>
+	
+	<!-- <script src="https://cdn.ckeditor.com/4.5.10/full/ckeditor.js"></script> -->
+	
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+	
+	<link rel="stylesheet" type="text/css" href="./stylesheets/theme.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/contact.css">
+	
+	<style>
+	body {
+		background: white !important;
+	}
+	
+	#messagebox {
+		width: 100%;
+		text-align: right;
+	}
+	</style>
+	
+	<script>
+	//setting custom validity to hebrew
+	function validateform() {
+		var element;
+		var error=false;
+		
+		element=document.getElementById("name");
+		if (element.value=="") {
+			element.setCustomValidity("הכנס ערך");
+			error=true;
+		}
+		else
+			element.setCustomValidity("");
+		
+		element=document.getElementById("email");
+		if (element.value=="") {
+			element.setCustomValidity("הכנס ערך");
+			error=true;
+		}
+		else
+			element.setCustomValidity("");
+		
+		element=document.getElementById("subject");
+		if (element.value=="") {
+			element.setCustomValidity("הכנס ערך");
+			error=true;
+		}
+		else
+			element.setCustomValidity("");
+		
+		element=document.getElementById("message");
+		if (element.value=="") {
+			element.setCustomValidity("הכנס ערך");
+			error=true;
+		}
+		else
+			element.setCustomValidity("");
+		
+		if (error) return false;
+	}
+	
+	function textCounter(field,field2,maxlimit) {
+		var countfield = document.getElementById(field2);
+		
+		if ( field.value.length > maxlimit ) {
+			field.value = field.value.substring( 0, maxlimit );
+			return false;
+		}
+		else {
+			countfield.value = maxlimit - field.value.length;
+		}
+	}
+	</script>
+</head>
+<body>
+<form action="contact.php" method="post" accept-charset="UTF-8" name="form" id="conform">
+<fieldset>
+		<legend><h3>טופס יצירת קשר:</h3></legend>
+		<label for=name>שם מלא:</label>
+		<input type=text name="name" required placeholder="נא הכנס שם" autofocus="autofocus" id=name><br>
+		
+		<label for=email>דוא"ל:</label>
+		<input type=email name="email" required placeholder="example@example.com" id=email><br>
+		
+		<label for=subject>נושא:</label>
+		<input type=text name="subject" required placeholder="נא הכנס נושא" id=subject><br>
+		
+		<label for=message>הודעה:</label><input disabled  maxlength="4" value="1000" id="counter">
+		<textarea name="message" required maxlength=1000 placeholder="הקלד טקסט" id=message onkeyup="textCounter(this,'counter',1000)"></textarea><br>
+		
+		<input id="send" type=submit value="שלח" onClick="validateform()">
+</fieldset>
+</form>
+</body>
+</html>

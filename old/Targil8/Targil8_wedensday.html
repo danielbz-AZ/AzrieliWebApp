@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html>
+
+	<head>
+	
+	<title>Targil 8 - Wedensday</title>
+	
+	<meta charset="UTF-8">
+	
+	<style>
+		/* Tag styles */
+		div						{margin:auto; text-align:center}
+		body					{padding:0px; font-family:arial; background-image:url('Cabodegata.gif'); background-repeat:no-repeat; background-size:cover}
+		h1, h3					{margin:15px}
+		ul						{list-style:none}
+		
+		/* Id styles */
+		#wrapper				{background-color:#70CCC8; max-width:900px}
+		
+		#header					{max-height:80px}
+		#footer					{max-height:70px}
+		
+		#menu					{width:100%; margin:0px; padding:0px}
+		#menu a					{display:block; text-decoration:none; color:white}
+		#menu ul				{z-index:1}
+		#menu >li >ul >li >a	{color:transparent}
+		
+		#menu >li				{background-color:#C5C5C3; position:relative; width:19%; display:inline-block; border:1px solid black}
+		#menu >li >ul			{display:hidden; position:absolute; padding:0px; left:0; right:0; top:0}
+		#menu >li >ul >li		{display:hidden; height:0px; background-color:#023A65}
+		
+		#menu >li:hover			{background-color:#023A65}
+		#menu >li a:hover		{background-color:green}
+		
+		#menu >li:hover	>ul		{display:block; top:initial}
+		#menu >li:hover >ul >li	{display:block;
+								 height:22px;
+								 transition:0.3s}
+								 
+		#menu >li:hover >ul >li >a	{color:white}
+		
+		#content_wrapper		{background-color:#E5CF9E}
+		#content_wrapper div	{direction:rtl; display:inline-block}
+		
+		#content				{width:80%; text-align:right; background-color:white !important}
+		#content div			{margin:15px; position:relative; border:2px solid green}
+		#content a				{margin:15px; display:block}
+		
+		#sidebar				{width:19%; vertical-align:top; overflow:hidden}
+		
+		#cat					{position:absolute; top:0; left:0}
+	</style>
+	
+	<script>
+		var value=10;
+		function move() {
+			var cat=document.getElementById("cat");
+			
+			if (value<310) {
+				cat.style.transform="translate("+value+"px,"+value+"px)";
+				value+=10;
+			}
+		}
+	</script>
+	
+	</head>
+	
+	<body>
+		<a href="../" style="position:absolute; display:inline-block; float:left"><img src="home.gif" height=50px title="home (index page)" alt="דף הבית"></a>
+		
+		<div id=wrapper>
+			<div id=header>
+				<h1>My styled page!</h1>
+				<ul id=menu>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">1st link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">2nd link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">3rd link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					<li><a href="#">4th sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">4th link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">5th link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				</ul>
+			</div>
+<!------------------------------------------------------------------------------>
+			<div id=content_wrapper class=cwrapper>
+				<div id=content>
+					<a href="#" onClick="move()">move cat</a>
+					<div style="width:400px; height:400px">
+					<img id=cat src="cat.gif"></img>
+					</div>
+				</div>
+<!------------------------------------------------------------------------------>
+				<div id=sidebar>
+					<img src="sideimg.gif"></img>
+				</div>
+			</div>
+<!------------------------------------------------------------------------------>
+			<div id=footer>
+				<h3>My Footer!</h3>
+			</div>
+<!------------------------------------------------------------------------------>
+		</div>
+	</body>
+	
+</html>

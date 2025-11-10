@@ -1,0 +1,11 @@
+﻿<h2>מפעלי לגו:</h2><br>
+ישנם מספר מפעלי לגו המאוד יידועים, כל אחד ממפעלים אלו מכיל מכשור ושיטות טכנולוגיות חדישות לצורך הביקוש הקיצוני.<hr class=break>
+
+בילאונד:<br>
+<img title="billund" alt="בילאונד" src="./visualstorage/photos/lego/aerialbillund.gif" style="text-align: center; float: initial;"><hr class=break>
+
+סינגפור:<br>
+<img title="singapore" alt="סינגפור" src="./visualstorage/photos/lego/singapore.gif" style="text-align: center; float: initial;"><hr class=break>
+
+קלאדנו:<br>
+<img title="kladno" alt="קלאדנו" src="./visualstorage/photos/lego/kladno.gif" style="text-align: center; float: initial;">

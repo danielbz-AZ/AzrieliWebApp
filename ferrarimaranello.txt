@@ -1,0 +1,3 @@
+﻿<h2>פרארי מראנלו:</h2><br>
+מטה פרארי בעיירה בשם מראנלו באיטליה, שם הכל החל בשנת 1939.
+<img title="maranello" alt="מראנלו" src="./visualstorage/photos/ferrari/maranello.gif" style="text-align: center; float: initial;">

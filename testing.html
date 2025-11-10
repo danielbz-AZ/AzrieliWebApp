@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl" manifest="offline.appcache">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>My Now Amazing Webpage</title>
+  
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="./slick-1.6.0/slick/slick.min.js"></script>
+	<script src="./scripts/gallery.js" lang="javascript"></script>
+	
+	<link rel="stylesheet" type="text/css" href="./slick-1.6.0/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="./slick-1.6.0/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/gallery.css"/>
+  </head>
+  
+  <body style="background: lightblue">
+
+  <div id=imgset>
+    <div><img id="thanks" alt="טופס נשלח" src="./visualstorage/photos/sent.png"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+    <div><img id="backpic" alt="רקע" src="./visualstorage/photos/backpic.gif"></div>
+  </div>
+  
+  <script>
+  loadgallery('imgset');
+  document.write(media);
+  </script>
+
+  </body>
+</html>

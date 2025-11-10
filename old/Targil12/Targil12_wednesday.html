@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Targil 12 - Wednesday</title>
+		
+		<meta charset="UTF-8">
+		
+		<style>
+			body		{text-align:center}
+			div			{margin:auto; padding:5px}
+			div *		{margin:10px}
+			
+			form		{text-align:left; background:linear-gradient(to bottom right, lightgray, gray); border:10px outset gray}
+			form *		{margin:10px}
+			form div	{margin:0px; display:inline-block; vertical-align:top}
+			
+			legend		{margin:0px; padding:0px}
+			
+			label		{float:right; border:1px solid transparent}
+			input		{border:2px inset #ECECEC}
+			select		{border:2px inset #ECECEC}
+			#submit		{border:2px outset #ECECEC}
+			
+			#content	{max-width:800px}
+			#formdiv	{margin:auto; max-width:520px}
+		</style>
+		
+		<script>
+			function validate(idval) {
+				var ob = document.getElementById(idval);
+				var inputs = ob.getElementsByTagName("input");
+				
+				for (i=0; i<inputs.length; ++i) {
+					if (inputs[i].value=="") {
+						inputs[i].setCustomValidity("Required");
+						return false;
+					}
+					else
+						inputs[i].setCustomValidity("");
+				}
+				
+				document.loc.submit;
+				return true;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<a href="../" style="position:absolute; display:inline-block; left:0px"><img src="home.gif" height=50px title="home (index page)" alt="דף הבית"></a>
+		
+		<div id=content>
+			<div id=formdiv>
+			<form action="Targil12.php" method="post" name="Targil 12" id=form12>
+				<fieldset>
+					<legend><h3>Appartment Form:</h3></legend>
+					
+					<div id=labels>
+						<label for=alias>Name:</label><br>
+						<label for=sqsize>Size:</label><br>
+						<label for=country>Country:</label><br>
+					</div>
+					
+					<div id=data>
+						<input type=text name="fname" value="" placeholder="please enter name" autofocus="autofocus" id=alias><br>
+						
+						<input type="radio" name="size" value="50" id=sqsize checked>50sqm
+						<input type="radio" name="size" value="100" id=sqsize>100sqm
+						<input type="radio" name="size" value="150" id=sqsize>150sqm
+						<input type="radio" name="size" value="200" id=sqsize>200sqm<br>
+						
+						<select name=countries id="country">
+							<option>Israel
+							<option>United Kingdoms
+							<option>United States
+							<option>Holland
+							<option>Germany
+							<option>Russia
+							<option>France
+							<option>Italy
+							<option>Belgium
+							<option>China
+							<option>Korea
+						</select><br>
+						
+						<input type="submit" onClick="validate('form12')" value="submit" id=submit>
+					</div>
+				</fieldset>
+			</form>
+			</div>
+		</div>
+	</body>
+
+</html>

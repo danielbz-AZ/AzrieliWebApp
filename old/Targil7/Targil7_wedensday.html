@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+
+	<head>
+	
+	<title>Targil 7 - Wedensday</title>
+	
+	<meta charset="UTF-8">
+	
+	<style>
+		/* Tag styles */
+		div						{margin:auto; text-align:center}
+		body					{padding:0px; font-family:arial; background-image:url('Cabodegata.gif'); background-repeat:no-repeat; background-size:cover}
+		h1, h3					{margin:5px}
+		ul						{list-style:none}
+		
+		/* Id styles */
+		#wrapper				{background-color:#70CCC8; max-width:900px}
+		
+		#header					{max-height:80px}
+		#footer					{max-height:70px}
+		
+		#menu					{width:100%; margin:0px; padding:0px}
+		#menu a					{display:block; text-decoration:none; color:white}
+		#menu >li >ul >li >a	{color:transparent}
+		
+		#menu >li				{background-color:#C5C5C3; position:relative; width:19%; display:inline-block; border:1px solid black}
+		#menu >li >ul			{display:hidden; position:absolute; padding:0px; left:0; right:0; top:0}
+		#menu >li >ul >li		{display:hidden; height:0px; background-color:#023A65}
+		
+		#menu >li:hover			{background-color:#023A65}
+		#menu >li a:hover		{background-color:green}
+		
+		#menu >li:hover	>ul		{display:block; top:initial}
+		#menu >li:hover >ul >li	{display:block;
+								 height:22px;
+								 transition:0.3s}
+								 
+		#menu >li:hover >ul >li >a	{color:white}
+		
+		#content_wrapper		{background-color:#E5CF9E}
+		#content_wrapper div	{direction:rtl; display:inline-block}
+		
+		#content				{width:80%; text-align:right; background-color:white !important}
+		#content p				{margin:5px}
+		
+		#sidebar				{width:19%; vertical-align:top}
+	</style>
+	
+	</head>
+	
+	<body>
+		<a href="../" style="position:absolute; display:inline-block; float:left"><img src="home.gif" height=50px title="home (index page)" alt="דף הבית"></a>
+		
+		<div id=wrapper>
+			<div id=header>
+				<h1>My styled page!</h1>
+				<ul id=menu>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">1st link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">2nd link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">3rd link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					<li><a href="#">4th sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">4th link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				<li><a href="#">5th link</a>
+					<ul>
+					<li><a href="#">1st sub-link</a>
+					<li><a href="#">2nd sub-link</a>
+					<li><a href="#">3rd sub-link</a>
+					</ul>
+<!------------------------------------------------------------------------------>
+				</ul>
+			</div>
+<!------------------------------------------------------------------------------>
+			<div id=content_wrapper class=cwrapper>
+				<div id=content>
+					<h3><a href="https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%A1%D7%A4%D7%91%D7%A8%D7%99_%D7%A4%D7%90%D7%99">ראספברי פאי:</a></h3>
+					<p>
+					ראספברי פאי (באנגלית: Raspberry Pi) היא סדרה של מחשבי-לוח-יחיד בגודל כרטיס אשראי שפותחו בקרן ראספברי פאי בבריטניה עם הכוונה לקידום ולימוד מדעי המחשב ברמה בסיסית במדינות עולם שלישי.<br>
+					<br>
+					ראספברי פאי וראספברי פאי 2 מיוצרים במספר תצורות לוח שונות דרך הסכמי ייצור עם החברות Newark element14, RS Components ו-Egoman. חברות אלו מוכרות את הלוח דרך החנות המקוונת של הראספברי פאי. חברת אגומן (Egoman) משווקת את הלוח בגרסה מיוחדת להפצה בטאיוואן בלבד, וניתן להבדיל בין תצורה זו לשאר התצורות בחוסר סמל ה-FCC. החומרה זהה לאורך כל תצורות הלוחות.<br>
+					<br>
+					הלוח המקורי מבוסס מערכת-על-שבב BCM2835 של ברואדקום הכוללת מעבד במהירות 700 MHz, מעבד גרפי ומשווק במקור עם 256 מגה-בייט זיכרון גישה אקראית (RAM או ראם). המודלים המאוחרים יותר (B, B+) הכילו 512 מגה-בייט ראם. המערכת טועת את קובצי הנתונים ומערכת ההפעלה מכרטיס SD הנמצא על הלוח.‏<br>
+					<br>
+					ב-2014, קרן ראספברי פאי פרסמה את לוח הקומפיוט (Compute), אשר משווק עם מעבד BCM2835 ו-512 מגה-בייט ראם, ובנוסף מגיע עם כרטיס eMMC המורכב על הלוח (לא ניתן להסרה). הלוח מיועד לשימוש במערכות מוטמעות.‏<br>
+					<br>
+					הקרן מציעה גרסאות לינוקס שונות לשימוש עם המחשב, וזמינות בחינם להורדה.‏ כלים לשפת פייתון זמינים, שכן היא השפה המרכזית בה מתכנתים על הפאי. בנוסף, ישנם כלים לתכנות בבייסיק, C/C++, ג'אווה, פרל ורובי.<br>
+					<br>
+					נכון ל-8 ביוני 2015, בין חמישה לשישה מיליון לוחות נמכרו.‏ הלוח מחזיק בשיא המחשב הבריטי הנמכר ביותר ובמקום השני בעולם אחרי ה-Amstrad PCW.<br>
+					<br>
+					בתחילת פברואר 2015, הדור השני של הלוח, הראספברי פאי 2, שווק.‏ המחשב החדש הוצע בתצורת B בלבד, ומציע מערכת על שבב BCM2836, המכילה מעבד Arm Cortex-A7 בעל ארבע ליבות. הלוח מגיע, בנוסף, עם מעבד גרפי זהה לדגם הקודם ו-1024 מגה-בייט ראם. המחיר של הלוח נשאר קבוע, 35$ אמריקאי, כאשר מחיר שאר הלוחות ירד.‏<br>
+					</p>
+				</div>
+<!------------------------------------------------------------------------------>
+				<div id=sidebar>
+				<!--Empty div-->
+				</div>
+			</div>
+<!------------------------------------------------------------------------------>
+			<div id=footer>
+				<h3>My Footer!</h3>
+			</div>
+<!------------------------------------------------------------------------------>
+		</div>
+	</body>
+	
+</html>

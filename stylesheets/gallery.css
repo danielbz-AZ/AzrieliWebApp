@@ -1,0 +1,52 @@
+:root {
+	--caseheight: 400px;
+	--casewidth: 500px;
+	--slideheight: 100px;
+	--slidewidth: 180px;
+}
+
+#media {
+	margin: auto;
+	margin-top: -25px;
+	height: 570px;
+}
+
+#slide, #gallery {
+	margin: auto;
+	margin-top: 10px;
+}
+
+.slider-nav {
+	max-width: 90%;
+}
+
+.slider-for {
+	max-width: 90%;
+	max-height: var(--caseheight);
+}
+
+.slider-for div {
+	
+}
+
+.slider-for img {
+	margin: auto;
+	max-height: var(--caseheight);
+	max-width: var(--casewidth);
+	display: inline-block;
+}
+
+.slider-nav img {
+	height: var(--slideheight);
+	max-width: var(--slidewidth);
+	margin: 15px 10px;
+	display: inline-block;
+}
+
+.slider-nav .slick-current img {
+	transform: scale(1.2,1.2);
+	transform: translate(0,-7.5);
+	margin: 15px 20px;
+	max-height: var(--caseheight);
+	max-width: var(--casewidth);
+}
