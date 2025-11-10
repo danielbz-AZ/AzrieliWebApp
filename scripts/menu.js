@@ -12,7 +12,7 @@ var pageheader = "	<header>"
 +"					</nav>";
 
 var pagefooter = "	<footer id=footer>"
-+"						<p>Daniel B. 301770640 - Shenkar Academy &copy</p>"
++"						<p>A Simple Demo</p>"
 +"					</footer>";
 
 var menu = "<ul id=menu>"
