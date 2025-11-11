@@ -1,7 +1,10 @@
 {
   "name": "azrieli-web-basic",
   "version": "1.0.0",
+  "dependencies": {
+    "slick-carousel": "1.6.0"
+  },
   "cdnDependencies": {
-	"jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
   }
 }
