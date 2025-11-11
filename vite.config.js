@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  root: './public', // your project root (where index.html is)
+  root: './dist', // your project root (where index.html is)
   build: {
     outDir: 'dist',      // where to output production files
     emptyOutDir: true,   // clear dist before each build
