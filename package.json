@@ -1,7 +1,13 @@
 {
   "name": "azrieli-web-basic",
   "version": "1.0.0",
+  "dependencies": {
+    "mongodb": "^4.2.0"
+  },
   "cdnDependencies": {
-	"jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    "jquery": "https://code.jquery.com/jquery-1.12.4.min.js",
+    "slick-js": "https://cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick.min.js",
+    "slick-css": "https://cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick.css",
+    "slick-theme": "https://cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick-theme.css"
   }
 }

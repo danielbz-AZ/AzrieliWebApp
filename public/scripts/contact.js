@@ -1,3 +1,6 @@
+import $ from "jquery";
+import "slick-carousel";
+
 var contactform = "<iframe id='conframe' class='wrap' src='./contactform.html'></iframe>";
 
 var contact = "<div id='contact' class='modal'>"
