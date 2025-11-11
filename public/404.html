@@ -1,1 +1,228 @@
-<h1>Page Not Found!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Page Not Found</title>
+<style>
+  :root {
+    --bg-color: #2c2f33;
+    --container-bg: #36393f;
+    --text-color: #ffffff;
+    --subtext-color: #b9bbbe;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+  }
+  .container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  h1 {
+    font-size: 5em;
+    margin: 0;
+  }
+  h1 span:nth-child(1) { color: #4285f4; }
+  h1 span:nth-child(2) { color: #ea4335; }
+  h1 span:nth-child(3) { color: #fbbc05; }
+  p {
+    color: var(--subtext-color);
+    margin: 10px 0 20px;
+  }
+  canvas {
+    background: var(--container-bg);
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid #4b4e6d;
+  }
+  .instructions {
+    font-size: 0.9em;
+    color: var(--subtext-color);
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1><span>4</span><span>0</span><span>4</span></h1>
+    <p>Oops! The page you’re looking for doesn’t exist.</p>
+    <canvas id="gameCanvas" width="600" height="300"></canvas>
+    <div class="instructions">
+      Use the arrow keys to move the snake. Eat the food to grow. When it reaches an edge it reappears on the opposite side.
+      You lose only if you collide with yourself. The snake speeds up as you earn points. Press <b>Enter</b> to restart.
+    </div>
+  </div>
+
+<script>
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+  const cellSize = 20;
+  const rows = canvas.height / cellSize;
+  const cols = canvas.width / cellSize;
+
+  // Speed control
+  const baseInterval  = 150;
+  const minInterval   = 50;
+  const speedStep     = 10;
+  const pointsPerStep = 4;
+
+  let snake, food, direction, score, gameOver;
+  let movementInterval;
+  let lastMoveTime;
+  let animationId;
+  let inputQueue = [];
+  let waitingForStart;
+
+  function initGame() {
+    snake = [{ x: Math.floor(cols / 2), y: Math.floor(rows / 2) }];
+    direction = { dx: 0, dy: 0 }; // no movement until start
+    score = 0;
+    gameOver = false;
+    movementInterval = baseInterval;
+    lastMoveTime = performance.now();
+    inputQueue = [];
+    waitingForStart = true;
+    placeFood();
+    if (!animationId) {
+      animationId = requestAnimationFrame(gameLoop);
+    }
+  }
+
+  function placeFood() {
+    let newFood;
+    do {
+      newFood = { x: Math.floor(Math.random() * cols),
+                  y: Math.floor(Math.random() * rows) };
+    } while (snake.some(seg => seg.x === newFood.x && seg.y === newFood.y));
+    food = newFood;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // draw food
+    ctx.fillStyle = '#fa8231';
+    ctx.fillRect(food.x * cellSize, food.y * cellSize, cellSize, cellSize);
+    // draw snake
+    ctx.fillStyle = '#4cd964';
+    snake.forEach(seg => {
+      ctx.fillRect(seg.x * cellSize, seg.y * cellSize, cellSize, cellSize);
+    });
+    // score
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '16px Arial';
+    ctx.fillText(`Score: ${score}`, 10, 20);
+    // waiting message
+    if (waitingForStart && !gameOver) {
+      ctx.fillStyle = '#fa8231';
+      ctx.font = '16px Arial';
+      ctx.fillText('Press an arrow key to start', 50, canvas.height / 2);
+    }
+    // game-over message
+    if (gameOver) {
+      ctx.fillStyle = '#fa4758';
+      ctx.font = '20px Arial';
+      ctx.fillText('Game Over! Press Enter to restart.', 50, canvas.height / 2);
+    }
+  }
+
+  function update() {
+    // apply queued input
+    if (!waitingForStart && inputQueue.length > 0) {
+      const queuedDir = inputQueue.shift();
+      // avoid reversing
+      if (!(queuedDir.dx === -direction.dx && queuedDir.dy === -direction.dy)) {
+        direction = queuedDir;
+      }
+    }
+
+    let nx = snake[0].x + direction.dx;
+    let ny = snake[0].y + direction.dy;
+
+    // wrap around edges
+    if (nx < 0)      nx = cols - 1;
+    if (nx >= cols)  nx = 0;
+    if (ny < 0)      ny = rows - 1;
+    if (ny >= rows)  ny = 0;
+
+    // self collision
+    if (snake.some(seg => seg.x === nx && seg.y === ny)) {
+      gameOver = true;
+      return;
+    }
+
+    snake.unshift({ x: nx, y: ny });
+
+    if (nx === food.x && ny === food.y) {
+      score++;
+      placeFood();
+      adjustSpeed();
+    } else {
+      snake.pop();
+    }
+  }
+
+  function adjustSpeed() {
+    const stepCount = Math.floor(score / pointsPerStep);
+    const newInterval = Math.max(minInterval, baseInterval - stepCount * speedStep);
+    movementInterval = newInterval;
+  }
+
+  function gameLoop(timestamp) {
+    if (!gameOver && !waitingForStart) {
+      if (timestamp - lastMoveTime >= movementInterval) {
+        lastMoveTime = timestamp;
+        update();
+      }
+    }
+    draw();
+    requestAnimationFrame(gameLoop);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    let newDir;
+    switch (e.code) {
+      case 'ArrowUp':
+        newDir = { dx: 0, dy: -1 };
+        break;
+      case 'ArrowDown':
+        newDir = { dx: 0, dy: 1 };
+        break;
+      case 'ArrowLeft':
+        newDir = { dx: -1, dy: 0 };
+        break;
+      case 'ArrowRight':
+        newDir = { dx: 1, dy: 0 };
+        break;
+      case 'Enter':
+        if (gameOver) initGame();
+        return;
+    }
+    if (newDir) {
+      if (waitingForStart) {
+        // first arrow press starts the game
+        waitingForStart = false;
+        direction = newDir;
+        lastMoveTime = performance.now();
+      } else {
+        const lastQueued = inputQueue.length > 0 ? inputQueue[inputQueue.length - 1] : direction;
+        if (!(newDir.dx === -lastQueued.dx && newDir.dy === -lastQueued.dy)) {
+          inputQueue.push(newDir);
+        }
+      }
+    }
+  });
+
+  initGame();
+</script>
+</body>
+</html>
