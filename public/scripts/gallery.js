@@ -1,3 +1,8 @@
+import $ from "jquery";
+import "slick-carousel";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 var sframe = "<div id='slide' class='slider-for'>";
 var slides = "<div id='gallery' class='slider-nav'>";
 var media = "<section id='media'>";
