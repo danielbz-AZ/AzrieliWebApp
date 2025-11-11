@@ -1,4 +1,5 @@
 [build]
+  command = "npm run build"
   publish = "public"  # Folder to publish (change if your HTML is in a different folder)
   functions = "functions"  # Folder containing serverless functions
 
