@@ -7,6 +7,9 @@
   "cdnDependencies": {
     "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
   },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
