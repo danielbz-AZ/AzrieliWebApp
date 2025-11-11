@@ -1,7 +1,4 @@
-﻿import $ from "jquery";
-import "slick-carousel";
-
-var submenu0 = ["'./'","בית"];
+﻿var submenu0 = ["'./'","בית"];
 var submenu1 = ["'./ferrari.html'","פרארי","./ferrarigall.html","גלריה","./ferrariinov.html","חדשנות","./ferraridesign.html","עיצוב","./ferrarifac.html","מפעלים ועוד","#","קישורים"];
 var submenu2 = ["'./lego.html'","לגו","./legogall.html","גלריה","./legomake.html","עשייה","./legofacts.html","עובדות","./legofac.html","מפעלים ועוד","#","קישורים"];
 var submenu3 = ["'./intel.html'","אינטל","./intelgall.html","גלריה","./firstproccessor.html","המעבד הראשון","./intelprocess.html","התהליך","./intelfac.html","מפעלים ועוד","#","קישורים"];
